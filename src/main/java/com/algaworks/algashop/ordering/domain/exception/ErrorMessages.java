@@ -21,5 +21,7 @@ public class ErrorMessages {
     public static final String VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_ZERO = "Loyalty points cannot be zero";
     public static final String VALIDATION_ERROR_DOCUMENT_CANNOT_BE_NULL = "Document cannot be null";
     public static final String VALIDATION_ERROR_DOCUMENT_CANNOT_BE_BLANK = "Document cannot be blank";
+    public static final String VALIDATION_ERROR_PHONE_NUMBER_CANNOT_BE_NULL = "Phone number cannot be null";
+    public static final String VALIDATION_ERROR_PHONE_NUMBER_CANNOT_BE_BLANK = "Phone number cannot be blank";
 
 }
