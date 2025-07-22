@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ development, main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Rodar testes
+        run: ./gradlew test
