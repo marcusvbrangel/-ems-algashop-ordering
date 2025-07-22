@@ -8,8 +8,9 @@ public class FieldValidations {
 
     private FieldValidations() {}
 
-    public static void requireValidEmail(String email) {
+    public static boolean requireValidEmail(String email) {
         requireValidEmail(email, null);
+        return false;
     }
 
     public static void requireValidEmail(String email, String errorMessage) {
