@@ -40,4 +40,11 @@ class BirthDateTest {
         assertThat(birthDate.age()).isEqualTo(20);
     }
 
+    @Test
+    void deve_retornar_string_correta_no_toString() {
+        LocalDate data = LocalDate.of(2000, 1, 1);
+        BirthDate birthDate = new BirthDate(data);
+        assertThat(birthDate.toString()).isEqualTo("2000-01-01");
+    }
+
 }
