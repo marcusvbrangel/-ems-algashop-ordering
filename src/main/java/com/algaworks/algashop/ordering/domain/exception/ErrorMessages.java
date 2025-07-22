@@ -17,7 +17,8 @@ public class ErrorMessages {
     public static final String VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_NULL = "Loyalty points cannot be null";
     public static final String VALIDATION_ERROR_FULL_NAME_CANNOT_BE_BLANK = "Full name cannot be blank";
     public static final String VALIDATION_ERROR_CUSTOMER_ARCHIVED = "Customer is archived and cannot be modified";
-    public static final String VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_NEGATIVE_OR_ZERO = "Loyalty points cannot be negative";
-
+    public static final String VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_NEGATIVE = "Loyalty points cannot be negative";
+    public static final String VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_NEGATIVE_OR_ZERO = "Loyalty points cannot be zero or negative";
+    public static final String VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_ZERO = "Loyalty points cannot be zero";
 
 }

@@ -2,16 +2,20 @@ package com.algaworks.algashop.ordering.domain.valueobject;
 
 import java.util.Objects;
 
+import static com.algaworks.algashop.ordering.domain.exception.ErrorMessages.*;
+
 public record LoyaltyPoints(Integer value) implements Comparable<LoyaltyPoints> {
+
+    public static final LoyaltyPoints ZERO = new LoyaltyPoints(0);
 
     public LoyaltyPoints() {
         this(0);
     }
 
     public LoyaltyPoints(Integer value) {
-        Objects.requireNonNull(value);
+        Objects.requireNonNull(value, VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_NULL);
         if (value < 0) {
-            throw new IllegalArgumentException("Loyalty points cannot be negative");
+            throw new IllegalArgumentException(VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_NEGATIVE);
         }
         this.value = value;
     }
@@ -20,12 +24,12 @@ public record LoyaltyPoints(Integer value) implements Comparable<LoyaltyPoints> 
         return add(new LoyaltyPoints(value));
     }
 
-    public LoyaltyPoints add(LoyaltyPoints loyaltyPonts) {
-        Objects.requireNonNull(loyaltyPonts);
-        if (loyaltyPonts.value() < 0) {
-            throw new IllegalArgumentException("Loyalty points cannot be negative");
+    public LoyaltyPoints add(LoyaltyPoints loyaltyPoints) {
+        Objects.requireNonNull(loyaltyPoints, VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_NULL);
+        if (loyaltyPoints.value() <= 0) {
+            throw new IllegalArgumentException(VALIDATION_ERROR_LOYALTY_POINTS_CANNOT_BE_NEGATIVE_OR_ZERO);
         }
-        return new LoyaltyPoints(this.value() + loyaltyPonts.value());
+        return new LoyaltyPoints(this.value() + loyaltyPoints.value());
     }
 
     @Override
